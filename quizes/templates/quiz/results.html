@@ -1,0 +1,30 @@
+{% extends "quiz/base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Questions Result</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{ quiz.question }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{ quiz.option_one }} &mdash; <strong>{{ quiz.option_one_count}}</strong></li>
+                <li class="list-group-item">{{ quiz.option_two }} &mdash; <strong>{{ quiz.option_two_count}}</strong></li>
+                <li class="list-group-item">{{ quiz.option_three }} &mdash; <strong>{{ quiz.option_three_count}}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Итого &mdash; <strong>{{ quiz.total }}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

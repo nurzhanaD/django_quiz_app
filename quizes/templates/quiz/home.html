@@ -1,0 +1,28 @@
+{% extends "quiz/base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Существующие опросы</h3>
+            </div>
+                
+            <ul class="list-group">
+                {% for quiz in quizes %}
+                <li class="list-group-item">
+                    <strong>{{ quiz.question }}</strong>
+                    <span class="pull-right">
+                        <a href="{% url 'vote' quiz.id %}" class="btn btn-info btn-xs">Ответить</a> &nbsp;
+                        <a href="{% url 'results' quiz.id %}" class="btn btn-default btn-xs">Посмотреть ответы</a> &nbsp;
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
